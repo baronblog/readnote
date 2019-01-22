@@ -8,3 +8,6 @@
 
 ### 前端
 * 主要是记录《Javascript高级程序设计》和《锋利的Jquery》读书笔记
+
+### Python
+* 主要记录Python相关的难点
