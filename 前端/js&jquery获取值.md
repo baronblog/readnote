@@ -30,3 +30,8 @@ $(document).ready(function(){
 如果使用hide的话，就会把选中标签内的html代码全部隐藏，
 如果使用show的话，就会把之前hide隐藏的代码恢复
 
+
+### 获取表单选中内容或者全部内容
+返回选中的内容：$("#id").bootstrapTable("getSelections")
+返回表单全部内容：$("#id").bootstrapTable("getAllSelections")
+
