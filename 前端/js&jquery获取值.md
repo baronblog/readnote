@@ -2,7 +2,7 @@
 
 
 ### val 用法
-如果直接就是val，会直接获取input元素的value的值；
+如果直接就是val，会直接获取input元素的value的值； <br/>
 如果在val添加了值，就会把之前的值设置为val里面的值。
 
 ```
@@ -27,11 +27,11 @@ $(document).ready(function(){
 ```
 
 ### show和hide用法
-如果使用hide的话，就会把选中标签内的html代码全部隐藏，
-如果使用show的话，就会把之前hide隐藏的代码恢复
+如果使用hide的话，就会把选中标签内的html代码全部隐藏; <br/>
+如果使用show的话，就会把之前hide隐藏的代码恢复.
 
 
 ### 获取表单选中内容或者全部内容
-返回选中的内容：$("#id").bootstrapTable("getSelections")
-返回表单全部内容：$("#id").bootstrapTable("getAllSelections")
+返回选中的内容：$("#id").bootstrapTable("getSelections"); <br/>
+返回表单全部内容：$("#id").bootstrapTable("getAllSelections").
 
