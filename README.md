@@ -11,3 +11,6 @@
 
 ### Python
 * 主要记录Python相关的难点
+
+#### Django
+* 记录Django相关知识点以及阅读源码的理解
