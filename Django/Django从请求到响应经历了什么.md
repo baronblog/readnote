@@ -18,7 +18,9 @@ def simplr_wsgi_app(environ, start_response):
 
 ### Django 完整数据流
 * 用户通过浏览器请求一个页面  
-* 求到达Request Middlewares，中间件对request做一些预处理或者直接response请求  
+* 求到达Request Middlewares，中间件对request做一些预处理或者直接response请求
+	* django通过实现了wsgi协议的server端调用，会调用app，而django的app是这样封装的： application = get_wsgi_application()，调用application的时候就是application()(即get_wsgi_application()(environ,start_response)，为什么可以这样，因为WSGIServer实现了__call__方法)
+	
 * URLConf通过urls.py文件和请求的URL找到相应的View  
 * View Middlewares被访问，它同样可以对request做一些处理或者直接返回response  
 * 调用View中的函数  
