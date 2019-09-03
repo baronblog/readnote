@@ -9,6 +9,15 @@
 
 ### ORM 优点
 * 防止SQL注入，因为ORM在实际执行的时候，会转换成SQL执行，在转换过程中会对注入进行处理
+  ```
+  比如说我想登录，必须验证账号和密码，sql语句如下：
+  select * from admin_table where name='%s' and pwd='%s'
+
+  在前端不做限制的情况下，或者后端不做处理的情况下，可以格式化成这样：只要name字段输入admin or admin=admin #即可
+  select * from admin_table where name=admin or admin=admin # and pwd=123
+
+  以上情况如果只是前端做了限制只是防止普调用户，如果比较熟悉web的同学，还是可以伪造请求，得到返回的cookies，去拿自己想要的东西
+  ```
 * 对数据库层进行了抽象，不需要关于数据库底层的东西，只需要关注业务即可
 * 数据模型都在一个地方，便于更新和维护，也可以重用代码
 * 不是很复杂的查询不用担心效率低，因为ORM自身已经优化了很多
