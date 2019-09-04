@@ -1,11 +1,13 @@
-# coding:utf-8
-"""
-@目标：解析WSGI源码，该文件做为WSGI接口
-@作者：louis
-
-"""
+## WSGI 相关知识
 
 
+### 什么事WSGI
+* WSGI 是一种协议，该协议规定了Web服务器和业务框架之间是如何交流的，具体实现该协议的由Apache的mod_wsgi模块/uWSGI/gunicorn
+* 要实现WSGI协议，必须实现web server和web application两部分才行
+
+
+
+```
 #在Python PEP333中定义了WSGI接口标准，最简单的函数实现如下
 def application(environ,start_response):
     '''
@@ -25,4 +27,4 @@ if __name__ == '__main__':
     httpd = make_server('127.0.0.1',8002,application)
     print("serving http on port 8002")
     httpd.serve_forever()
-    #以上表示实现最简单的WSGI，那Django呢？是如何实现WSGI的呢？留坑，等待Django源码解读再次深入理解
+```
