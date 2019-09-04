@@ -1,10 +1,15 @@
 ## WSGI 相关知识
 
 
-### 什么事WSGI
+### 什么是WSGI
 * WSGI 是一种协议，该协议规定了Web服务器和业务框架之间是如何交流的，具体实现该协议的由Apache的mod_wsgi模块/uWSGI/gunicorn
 * 要实现WSGI协议，必须实现web server和web application两部分才行
-
+* web server端要履行的义务
+    * 接收/响应HTTP请求
+    * 准备调用application时的environ和start_response参数
+    * 组织响应头/响应体返回给客户端
+* web application端要履行的义务
+    * 接收server端发过来的数据，并按照一定逻辑处理后返回结果
 
 
 ```
@@ -28,3 +33,9 @@ if __name__ == '__main__':
     print("serving http on port 8002")
     httpd.serve_forever()
 ```
+
+
+
+
+#### 参考资料
+* [WSGI协议的作用和实现原理详解](https://www.cnblogs.com/wangcoo/p/10018373.html)
