@@ -3,11 +3,13 @@
 
 
 <br/>
+
 #### 什么是HTTP协议
 http是一个简单的请求-响应协议，它通常运行在TCP之上。它指定了客户端可能发送给服务器什么样的消息以及得到什么样的响应。请求和响应消息的头以ASCII码形式给出；而消息内容则具有一个类似MIME的格式。这个简单模型是早期Web成功的有功之臣，因为它使得开发和部署是那么的直截了当，参考自[百度百科-HTTP协议](https://baike.baidu.com/item/http/243074?fromtitle=HTTP%E5%8D%8F%E8%AE%AE&fromid=1276942&fr=aladdin)
 
 
 <br/>
+
 #### 开发中的具体应用
 * 模拟HTTP数据：有时候，我们可能需要模拟发送HTTP数据给其他服务，但是又没有现成的框架，即可以自己拼接成HTTP协议的数据发送给Web服务器或者浏览器，以Django中的HttpResponse为例，其中的serialize函数其实就是拼接成HTTP协议的格式发送给uWSGI。
     ```
