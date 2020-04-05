@@ -32,6 +32,9 @@
 <br/>
 
 * 接下来就是对着csrf值一顿检查，如果不合法，便调用其中的self._reject,如果合法，便调用其中的self._accept，其中如果方法不在这个列表中，便才会检测crsf值，其余方法便是直接调用self._accept
+    * 为什么GET方法可以直接通过呢？因为GET方法你要先生成一个crsf随机值给到前端，并且设置cookies，每刷新一次前段的csrf值都会变一次，但是cookies不变，然后你再使用POST等方法提交的时候才能进行检验
+    * 提交后只需要把两个值拿过来解密，能解出一样的值就可以了
+    * 
     ```
             if request.method not in ('GET', 'HEAD', 'OPTIONS', 'TRACE'):
                 if getattr(request, '_dont_enforce_csrf_checks', False):
